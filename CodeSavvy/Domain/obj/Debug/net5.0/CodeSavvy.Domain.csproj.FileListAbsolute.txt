@@ -1,0 +1,12 @@
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\bin\Debug\net5.0\CodeSavvy.Domain.deps.json
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\bin\Debug\net5.0\CodeSavvy.Domain.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\bin\Debug\net5.0\ref\CodeSavvy.Domain.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\bin\Debug\net5.0\CodeSavvy.Domain.pdb
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.csproj.AssemblyReference.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.AssemblyInfoInputs.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.AssemblyInfo.cs
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.csproj.CoreCompileInputs.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\ref\CodeSavvy.Domain.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Domain\obj\Debug\net5.0\CodeSavvy.Domain.pdb

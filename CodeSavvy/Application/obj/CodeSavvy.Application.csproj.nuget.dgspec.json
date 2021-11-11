@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {}
+    "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {}
   },
   "projects": {
-    "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {
+    "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj",
+        "projectUniqueName": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj",
         "projectName": "CodeSavvy.Application",
-        "projectPath": "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj",
+        "projectPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj",
         "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-        "outputPath": "D:\\C# Projects\\CodeSavvy\\Application\\obj\\",
+        "outputPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\C# Projects\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj": {
-                "projectPath": "D:\\C# Projects\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj"
+              "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj": {
+                "projectPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj"
               }
             }
           }
@@ -62,14 +62,14 @@
         }
       }
     },
-    "D:\\C# Projects\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj": {
+    "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# Projects\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj",
+        "projectUniqueName": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj",
         "projectName": "CodeSavvy.Domain",
-        "projectPath": "D:\\C# Projects\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj",
+        "projectPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\CodeSavvy.Domain.csproj",
         "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-        "outputPath": "D:\\C# Projects\\CodeSavvy\\Domain\\obj\\",
+        "outputPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",

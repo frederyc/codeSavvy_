@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeSavvy.Domain.Models
 {
-    class Credentials
+    public class Credentials
     {
         public int Id { get; set; }
         public string Email { get; set; }

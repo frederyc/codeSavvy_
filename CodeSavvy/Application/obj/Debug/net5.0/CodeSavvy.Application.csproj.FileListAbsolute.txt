@@ -1,0 +1,15 @@
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\CodeSavvy.Application.deps.json
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\CodeSavvy.Application.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\ref\CodeSavvy.Application.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\CodeSavvy.Application.pdb
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\CodeSavvy.Domain.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\bin\Debug\net5.0\CodeSavvy.Domain.pdb
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.AssemblyReference.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.AssemblyInfoInputs.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.AssemblyInfo.cs
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.CoreCompileInputs.cache
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.CopyComplete
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\ref\CodeSavvy.Application.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.pdb

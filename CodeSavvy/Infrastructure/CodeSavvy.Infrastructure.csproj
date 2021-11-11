@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Application\CodeSavvy.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Persistance\" />
+  </ItemGroup>
+
 </Project>

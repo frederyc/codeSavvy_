@@ -5742,11 +5742,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# Projects\\CodeSavvy\\Infrastructure\\CodeSavvy.Infrastructure.csproj",
+      "projectUniqueName": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Infrastructure\\CodeSavvy.Infrastructure.csproj",
       "projectName": "CodeSavvy.Infrastructure",
-      "projectPath": "D:\\C# Projects\\CodeSavvy\\Infrastructure\\CodeSavvy.Infrastructure.csproj",
+      "projectPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Infrastructure\\CodeSavvy.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\WIN10\\.nuget\\packages\\",
-      "outputPath": "D:\\C# Projects\\CodeSavvy\\Infrastructure\\obj\\",
+      "outputPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WIN10\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5763,8 +5763,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {
-              "projectPath": "D:\\C# Projects\\CodeSavvy\\Application\\CodeSavvy.Application.csproj"
+            "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj": {
+              "projectPath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj"
             }
           }
         }
