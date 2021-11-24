@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "z41+uj9JDviKSApO921SbZ5a6cfkLQU335eS0wYXlH8L+NXoDv128tBOQwdVjXyW+jTrjcFo8yd8gA0+81ZqQg==",
+  "dgSpecHash": "ymX07VbitI3O3p/U3lcpHkWGZelsopRA79lFr3ItTPSO0wf5w9hhqfLIONS+tcbVZBxaeWiS/od4xbKlAZGhFw==",
   "success": true,
   "projectFilePath": "D:\\C# Projects\\codeSavvy_\\CodeSavvy\\Application\\CodeSavvy.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\WIN10\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\WIN10\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\WIN10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\WIN10\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\WIN10\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

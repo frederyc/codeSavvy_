@@ -9,7 +9,6 @@ D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Appli
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.AssemblyInfoInputs.cache
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.AssemblyInfo.cs
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.CoreCompileInputs.cache
-D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.CopyComplete
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\ref\CodeSavvy.Application.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.pdb

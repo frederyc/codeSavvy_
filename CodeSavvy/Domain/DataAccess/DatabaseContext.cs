@@ -15,6 +15,7 @@ namespace CodeSavvy.Domain.DataAccess
         public DbSet<Credentials> Credentials { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Employer> Employers { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Job> Jobs { get; set; }
     }
 }

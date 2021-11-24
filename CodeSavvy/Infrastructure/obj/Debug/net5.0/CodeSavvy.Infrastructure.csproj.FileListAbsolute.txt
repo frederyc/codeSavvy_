@@ -11,7 +11,7 @@ D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.In
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.AssemblyInfoInputs.cache
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.AssemblyInfo.cs
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.csproj.CoreCompileInputs.cache
-D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.csproj.CopyComplete
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\ref\CodeSavvy.Infrastructure.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.pdb
+D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.csproj.CopyComplete
