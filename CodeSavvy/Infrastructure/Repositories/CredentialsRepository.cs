@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CodeSavvy.Domain.DataAccess;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
+using CodeSavvy.Infrastructure.DataAccess;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {
@@ -18,7 +18,7 @@ namespace CodeSavvy.Infrastructure.Repositories
 
         public Task<Credentials> CreateCredentials(Credentials credentials)
         {
-            _db.Credentials.Update(credentials);
+            _db.Credentials.Add(credentials);
             _db.SaveChanges();
             return Task.FromResult(credentials);
         }
