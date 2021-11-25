@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CodeSavvy.Domain.DataAccess;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
+using CodeSavvy.Infrastructure.DataAccess;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {

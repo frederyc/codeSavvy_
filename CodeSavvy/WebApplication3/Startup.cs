@@ -1,8 +1,8 @@
 using System;
 using System.Reflection;
 using CodeSavvy.Application.Applications.Queries.GetApplicationByIdQuery;
-using CodeSavvy.Domain.DataAccess;
 using CodeSavvy.Domain.Interfaces;
+using CodeSavvy.Infrastructure.DataAccess;
 using CodeSavvy.Infrastructure.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

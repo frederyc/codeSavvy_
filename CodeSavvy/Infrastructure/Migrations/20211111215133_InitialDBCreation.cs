@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CodeSavvy.Domain.Migrations
+namespace CodeSavvy.Infrastructure.Migrations
 {
     public partial class InitialDBCreation : Migration
     {
