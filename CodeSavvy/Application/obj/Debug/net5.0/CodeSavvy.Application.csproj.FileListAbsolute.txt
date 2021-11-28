@@ -12,4 +12,3 @@ D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Appli
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\ref\CodeSavvy.Application.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.pdb
-D:\C# Projects\codeSavvy_\CodeSavvy\Application\obj\Debug\net5.0\CodeSavvy.Application.csproj.CopyComplete
