@@ -13,6 +13,6 @@ namespace CodeSavvy.Domain.Interfaces
         Task<Favorite> DeleteFavoriteRecord(int favoriteId);
         Task<Favorite> GetFavoriteRecord(int favoriteId);
         Task<Favorite> UpdateFavoriteRecord(int favoriteId, Favorite favorite);
-        Task<List<Favorite>> GetFavoritesForEmployee(Employee employee);
+        Task<List<Favorite>> GetFavoritesForEmployee(int employeeId);
     }
 }

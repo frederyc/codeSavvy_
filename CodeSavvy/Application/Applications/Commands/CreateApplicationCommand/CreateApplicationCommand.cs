@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CodeSavvy.Domain.Models;
 using MediatR;
 
-namespace CodeSavvy.Application.Applications.CreateApplicationCommand
+namespace CodeSavvy.Application.Applications.Commands.CreateApplicationCommand
 {
     public class CreateApplicationCommand : IRequest<Domain.Models.Application>
     {
-        public Domain.Models.Application Application { get; set; }
+        public Job Job { get; set; }
+        public Employee Employee { get; set; }
+        public string Resume { get; set; }
     }
 }

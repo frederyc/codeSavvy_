@@ -11,6 +11,7 @@ namespace CodeSavvy.Domain.Interfaces
     {
         Task<Credentials> CreateCredentials(Credentials credentials);
         Task<Credentials> GetCredentials(int credentialsId);
+        Task<Credentials> GetCredentials(string email);
         Task<Credentials> DeleteCredentials(int credentialsId);
         Task<Credentials> UpdateCredentials(int credentialsId, Credentials credentials);
     }

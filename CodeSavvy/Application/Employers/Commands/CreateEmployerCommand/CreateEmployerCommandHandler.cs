@@ -21,6 +21,14 @@ namespace CodeSavvy.Application.Employers.Commands.CreateEmployerCommand
         public async Task<Employer> Handle(
             CreateEmployerCommand request,
             CancellationToken cancellationToken)
-            => await _repo.CreateEmployer(request.Employer);
+        {
+            var employer = new Employer
+            {
+                CompanyName = request.CompanyName,
+                Image = request.Image,
+                Credentials = request.Credentials
+            };
+            return await _repo.CreateEmployer(employer);
+        }
     }
 }

@@ -26,7 +26,6 @@ namespace WebApplication3.Controllers
 
         public IActionResult Index()
         {
-            LoadSampleData();
             return View();
         }
 

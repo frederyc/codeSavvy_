@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MediatR;
-using CodeSavvy.Domain.Models;
+﻿using MediatR;
 
-namespace CodeSavvy.Application.Applications.DeleteApplicationCommand
+namespace CodeSavvy.Application.Applications.Commands.DeleteApplicationCommand
 {
     public class DeleteApplicationCommand : IRequest<Domain.Models.Application>
     {

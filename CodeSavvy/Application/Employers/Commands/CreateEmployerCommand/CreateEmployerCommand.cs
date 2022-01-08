@@ -10,6 +10,8 @@ namespace CodeSavvy.Application.Employers.Commands.CreateEmployerCommand
 {
     public class CreateEmployerCommand : IRequest<Employer>
     {
-        public Employer Employer { get; set; }
+        public Domain.Models.Credentials Credentials { get; set; }
+        public string CompanyName { get; set; }
+        public string Image { get; set; } // Learn about blobs
     }
 }

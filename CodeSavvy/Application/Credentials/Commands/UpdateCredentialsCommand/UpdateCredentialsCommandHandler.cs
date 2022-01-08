@@ -20,6 +20,13 @@ namespace CodeSavvy.Application.Credentials.Commands.UpdateCredentialsCommand
         public async Task<Domain.Models.Credentials> Handle(
             UpdateCredentialsCommand request,
             CancellationToken cancellationToken)
-            => await _repo.UpdateCredentials(request.Id, request.Credentials);
+        {
+            var credentials = new Domain.Models.Credentials 
+            {
+                Email = request.Email,
+                Password = request.Password
+            };
+            return await _repo.UpdateCredentials(request.Id, credentials);
+        }
     }
 }

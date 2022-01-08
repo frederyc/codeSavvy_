@@ -21,6 +21,19 @@ namespace CodeSavvy.Application.Jobs.Commands.CreateJobCommand
         public async Task<Job> Handle(
             CreateJobCommand request,
             CancellationToken cancellationToken)
-            => await _repo.CreateJob(request.Job);
+        {
+            var job = new Job
+            {
+                Description = request.Description,
+                Level = request.Level,
+                Location = request.Location,
+                Position = request.Position,
+                PreferredQualifications = request.PreferredQualifications,
+                MinimumQualifications = request.MinimumQualifications,
+                Salary = request.Salary,
+                Employer = request.Employer
+            };
+            return await _repo.CreateJob(job);
+        }
     }
 }

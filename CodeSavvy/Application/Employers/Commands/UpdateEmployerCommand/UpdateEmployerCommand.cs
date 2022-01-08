@@ -11,6 +11,7 @@ namespace CodeSavvy.Application.Employers.Commands.UpdateEmployerCommand
     public class UpdateEmployerCommand : IRequest<Employer>
     {
         public int Id { get; set; }
-        public Employer Employer { get; set; }
+        public string CompanyName { get; set; }
+        public string Image { get; set; } // Learn about blobs
     }
 }

@@ -20,6 +20,13 @@ namespace CodeSavvy.Application.Favorites.Commands.CreateFavoriteCommand
         public async Task<Favorite> Handle(
             CreateFavoriteCommand request,
             CancellationToken cancellationToken)
-            => await _repo.CreateFavoriteRecord(request.Favorite);
+        {
+            var favorite = new Favorite
+            {
+                Job = request.Job,
+                Employee = request.Employee
+            };
+            return await _repo.CreateFavoriteRecord(favorite);
+        }
     }
 }

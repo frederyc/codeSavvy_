@@ -10,6 +10,7 @@ namespace CodeSavvy.Application.Employees.Commands.CreateEmployeeCommand
 {
     public class CreateEmployeeCommand : IRequest<Employee>
     {
-        public Employee Employee { get; set; }
+        public Domain.Models.Credentials Credentials { get; set; }
+        public string FullName { get; set; }
     }
 }

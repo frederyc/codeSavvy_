@@ -8,12 +8,6 @@ using System.Threading.Tasks;
 namespace CodeSavvy.Domain.Models
 {
 
-    /*
-     * Move migration from Domain to infrastructure
-     * Create or link db
-     * Learn more about how to use entity framework
-     */
-
     public class Application
     {
         public int Id { get; set; }

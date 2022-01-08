@@ -22,6 +22,6 @@ namespace CodeSavvy.Application.Favorites.Queries.GetFavoriteForEmployee
         public async Task<List<Favorite>> Handle(
             GetFavoriteForEmployeeQuery request,
             CancellationToken cancellationToken)
-            => await _repo.GetFavoritesForEmployee(request.Employee);
+            => await _repo.GetFavoritesForEmployee(request.EmployeeId);
     }
 }

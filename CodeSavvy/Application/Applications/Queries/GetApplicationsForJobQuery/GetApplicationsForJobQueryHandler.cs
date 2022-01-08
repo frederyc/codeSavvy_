@@ -20,6 +20,9 @@ namespace CodeSavvy.Application.Applications.Queries.GetApplicationsForJobQuery
         public async Task<List<Domain.Models.Application>> Handle(
             GetApplicationsForJobQuery request,
             CancellationToken cancellationToken)
-            => await _repo.GetApplicationsForJob(request.Job);
+        {
+
+            return await _repo.GetApplicationsForJob(request.JobId);
+        }
     }
 }

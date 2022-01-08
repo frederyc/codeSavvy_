@@ -18,6 +18,18 @@ namespace CodeSavvy.Application.Jobs.Commands.UpdateJobCommand
             => _repo = repo;
 
         public async Task<Job> Handle(UpdateJobCommand request, CancellationToken cancellationToken)
-            => await _repo.UpdateJob(request.Id, request.Job);
+        {
+            var job = new Job
+            {
+                Description = request.Description,
+                Level = request.Level,
+                Location = request.Location,
+                Position = request.Position,
+                PreferredQualifications = request.PreferredQualifications,
+                MinimumQualifications = request.MinimumQualifications,
+                Salary = request.Salary,
+            };
+            return await _repo.UpdateJob(request.Id, job);
+        }
     }
 }

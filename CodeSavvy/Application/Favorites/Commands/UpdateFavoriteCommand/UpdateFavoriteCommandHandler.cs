@@ -21,6 +21,19 @@ namespace CodeSavvy.Application.Favorites.Commands.UpdateFavoriteCommand
         public async Task<Favorite> Handle(
             UpdateFavoriteCommand request,
             CancellationToken cancellationToken)
-            => await _repo.UpdateFavoriteRecord(request.Id, request.Favorite);
+        {
+            var favorite = new Favorite
+            {
+                Employee = new Employee
+                {
+                    Id = request.EmployeeId
+                },
+                Job = new Job
+                {
+                    Id = request.JobId
+                }
+            };
+            return await _repo.UpdateFavoriteRecord(request.Id, favorite);
+        }
     }
 }

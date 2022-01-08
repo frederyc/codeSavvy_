@@ -21,6 +21,9 @@ namespace CodeSavvy.Application.Employees.Queries.GetEmployeeByIdQuery
         public async Task<Employee> Handle(
             GetEmployeeByIdQuery request,
             CancellationToken cancellationToken)
-            => await _repo.GetEmployee(request.Id);
+        {
+            return await _repo.GetEmployee(request.Id);
+        }
+
     }
 }

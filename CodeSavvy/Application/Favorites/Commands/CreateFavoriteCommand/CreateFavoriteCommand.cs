@@ -10,6 +10,7 @@ namespace CodeSavvy.Application.Favorites.Commands.CreateFavoriteCommand
 {
     public class CreateFavoriteCommand : IRequest<Favorite>
     {
-        public Favorite Favorite { get; set; }
+        public Employee Employee { get; set; }
+        public Job Job { get; set; }
     }
 }

@@ -20,6 +20,6 @@ namespace CodeSavvy.Application.Applications.Queries.GetApplicationsForEmployeeQ
         public async Task<List<Domain.Models.Application>> Handle(
             GetApplicationsForEmployeeQuery request,
             CancellationToken cancellationToken)
-            => await _repo.GetApplicationsForEmployee(request.Employee);
+            => await _repo.GetApplicationsForEmployee(request.EmployeeId);
     }
 }

@@ -10,6 +10,6 @@ namespace CodeSavvy.Application.Favorites.Queries.GetFavoriteForEmployee
 {
     public class GetFavoriteForEmployeeQuery : IRequest<List<Favorite>>
     {
-        public Employee Employee { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

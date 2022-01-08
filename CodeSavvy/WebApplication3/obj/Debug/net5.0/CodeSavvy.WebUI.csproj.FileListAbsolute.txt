@@ -133,3 +133,5 @@ D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\NSwag.Gener
 D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\NSwag.Generation.AspNetCore.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\YamlDotNet.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\AutoMapper.dll
+D:\C# Projects\codeSavvy_\CodeSavvy\WebApplication3\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

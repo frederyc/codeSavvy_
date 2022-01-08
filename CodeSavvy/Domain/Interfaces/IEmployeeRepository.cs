@@ -12,6 +12,7 @@ namespace CodeSavvy.Domain.Interfaces
         Task<Employee> CreateEmployee(Employee employee);
         Task<Employee> DeleteEmployee(int employeeId);
         Task<Employee> GetEmployee(int employeeId);
+        Task<Employee> GetEmployee(string email);
         Task<Employee> UpdateEmployee(int employeeId, Employee employee);
     }
 }

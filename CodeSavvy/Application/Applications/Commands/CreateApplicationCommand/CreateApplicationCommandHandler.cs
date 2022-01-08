@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using CodeSavvy.Domain.Interfaces;
+using CodeSavvy.Domain.Models;
 using MediatR;
 
-namespace CodeSavvy.Application.Applications.CreateApplicationCommand
+namespace CodeSavvy.Application.Applications.Commands.CreateApplicationCommand
 {
     public class CreateApplicationCommandHandler :
         IRequestHandler<CreateApplicationCommand, Domain.Models.Application>
@@ -20,6 +17,15 @@ namespace CodeSavvy.Application.Applications.CreateApplicationCommand
         public async Task<Domain.Models.Application> Handle(
             CreateApplicationCommand request,
             CancellationToken cancellationToken)
-            => await _repo.CreateApplication(request.Application);
+        {
+            var application = new Domain.Models.Application
+            {
+                Job = request.Job,
+                Employee = request.Employee,
+                Resume = request.Resume
+            };
+            return await _repo.CreateApplication(application);
+        }
+
     }
 }

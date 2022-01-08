@@ -20,6 +20,12 @@ namespace CodeSavvy.Application.Employees.Commands.UpdateEmployeeCommand
         public async Task<Employee> Handle(
             UpdateEmployeeCommand request,
             CancellationToken cancellationToken)
-            => await _repo.UpdateEmployee(request.Id, request.Employee);
+        {
+            var employee = new Employee
+            {
+                FullName = request.FullName
+            };
+            return await _repo.UpdateEmployee(request.Id, employee);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace CodeSavvy.Application.Favorites.Commands.UpdateFavoriteCommand
     public class UpdateFavoriteCommand : IRequest<Favorite>
     {
         public int Id { get; set; }
-        public Favorite Favorite { get; set; }
+        public int EmployeeId { get; set; }
+        public int JobId { get; set; }
     }
 }

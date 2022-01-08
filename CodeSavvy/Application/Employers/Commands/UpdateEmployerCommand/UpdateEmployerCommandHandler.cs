@@ -20,6 +20,13 @@ namespace CodeSavvy.Application.Employers.Commands.UpdateEmployerCommand
         public async Task<Employer> Handle(
             UpdateEmployerCommand request,
             CancellationToken cancellationToken)
-            => await _repo.UpdateEmployer(request.Id, request.Employer);
+        {
+            var employer = new Employer
+            {
+                CompanyName = request.CompanyName,
+                Image = request.Image
+            };
+            return await _repo.UpdateEmployer(request.Id, employer);
+        }
     }
 }

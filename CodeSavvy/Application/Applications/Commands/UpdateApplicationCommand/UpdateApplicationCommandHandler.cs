@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using CodeSavvy.Domain.Interfaces;
+using CodeSavvy.Domain.Models;
 using MediatR;
 
-namespace CodeSavvy.Application.Applications.UpdateApplicationCommand
+namespace CodeSavvy.Application.Applications.Commands.UpdateApplicationCommand
 {
     public class UpdateApplicationCommandHandler : 
         IRequestHandler<UpdateApplicationCommand, Domain.Models.Application>
@@ -20,6 +17,14 @@ namespace CodeSavvy.Application.Applications.UpdateApplicationCommand
         public async Task<Domain.Models.Application> Handle(
             UpdateApplicationCommand request,
             CancellationToken cancellationToken)
-            => await _repo.UpdateApplication(request.Id, request.Application);
+        {
+            var application = new Domain.Models.Application
+            {
+                Id = request.Id,
+                Resume = request.Resume
+            };
+
+            return await _repo.UpdateApplication(request.Id, application);
+        }
     }
 }

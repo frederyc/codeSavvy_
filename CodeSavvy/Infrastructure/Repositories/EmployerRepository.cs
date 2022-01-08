@@ -8,6 +8,7 @@ using CodeSavvy.Application.Exceptions.NullArgumentException;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
 using CodeSavvy.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {
@@ -16,39 +17,48 @@ namespace CodeSavvy.Infrastructure.Repositories
         private readonly DatabaseContext _db;
 
         public EmployerRepository(DatabaseContext db)
-            => _db = db;
+        {
+            _db = db;
+        }
 
-        public Task<Employer> CreateEmployer(Employer employer)
+        public async Task<Employer> CreateEmployer(Employer employer)
         {
             _ = employer ?? throw new EmployerNullArgumentException();
             _db.Employers.Add(employer);
-            _db.SaveChanges();
-            return Task.FromResult(employer);
+            await _db.SaveChangesAsync();
+            return employer;
         }
 
-        public Task<Employer> DeleteEmployer(int employerId)
+        public async Task<Employer> DeleteEmployer(int employerId)
         {
-            var employer = GetEmployer(employerId).Result;
+            var employer = await GetEmployer(employerId);
             _db.Employers.Remove(employer);
-            _db.SaveChanges();
-            return Task.FromResult(employer);
+            await _db.SaveChangesAsync();
+            return employer;
         }
 
-        public Task<Employer> GetEmployer(int employerId)
+        public async Task<Employer> GetEmployer(int employerId)
         {
-            var employer = _db.Employers.Find(employerId) ?? 
+            var employer = await _db.Employers.Include(x => x.Credentials).SingleAsync(x => x.Id == employerId) ?? 
                            throw new EmployerNotFoundException($"Employer with Id: {employerId} could not be found");
-            return Task.FromResult(employer);
+            return employer;
         }
 
-        public Task<Employer> UpdateEmployer(int employerId, Employer employer)
+        public async Task<Employer> GetEmployer(string email)
         {
-            _ = GetEmployer(employerId);
+            var employer = await _db.Employers.Include(x => x.Credentials).Where(x => x.Credentials.Email == email).FirstAsync() ??
+                           throw new EmployerNotFoundException($"Employer with credential's email: {email} could not be found");
+            return employer;
+        }
+
+        public async Task<Employer> UpdateEmployer(int employerId, Employer employer)
+        {
             _ = employer ?? throw new EmployerNullArgumentException();
-            employer.Id = employerId;
-            _db.Employers.Update(employer);
-            _db.SaveChanges();
-            return Task.FromResult(employer);
+            var employerEntity = await GetEmployer(employerId);
+            employerEntity.Image = employer.Image;
+            employerEntity.CompanyName = employer.CompanyName;
+            await _db.SaveChangesAsync();
+            return employer;
         }
     }
 }

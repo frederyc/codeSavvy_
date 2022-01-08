@@ -20,6 +20,13 @@ namespace CodeSavvy.Application.Employees.Commands.CreateEmployeeCommand
         public async Task<Employee> Handle(
             CreateEmployeeCommand request,
             CancellationToken cancellationToken)
-            => await _repo.CreateEmployee(request.Employee);
+        {
+            var employee = new Employee()
+            {
+                FullName = request.FullName,
+                Credentials = request.Credentials
+            };
+            return await _repo.CreateEmployee(employee);
+        }
     }
 }

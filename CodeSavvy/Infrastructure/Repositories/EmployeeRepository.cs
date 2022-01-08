@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using CodeSavvy.Application.Exceptions.NotFoundException;
 using CodeSavvy.Application.Exceptions.NullArgumentException;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
 using CodeSavvy.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {
@@ -15,39 +19,51 @@ namespace CodeSavvy.Infrastructure.Repositories
         private readonly DatabaseContext _db;
 
         public EmployeeRepository(DatabaseContext db)
-            => _db = db;
+        {
+            _db = db;
+        }
 
-        public Task<Employee> CreateEmployee(Employee employee)
+        public async Task<Employee> CreateEmployee(Employee employee)
         {
             _ = employee ?? throw new EmployeeNullArgumentException();
-            _db.Employees.Add(employee);
-            _db.SaveChanges();
-            return Task.FromResult(employee);
+            await _db.Employees.AddAsync(employee);
+            await _db.SaveChangesAsync();
+            return employee;
         }
 
-        public Task<Employee> DeleteEmployee(int employeeId)
+        public async Task<Employee> DeleteEmployee(int employeeId)
         {
-            var employee = GetEmployee(employeeId).Result;
-            _db.Employees.Remove(employee);
-            _db.SaveChanges();
-            return Task.FromResult(employee);
+
+            var x = await _db.Employees
+                                    .Include(x => x.Credentials)
+                                    .SingleAsync(x => x.Id == employeeId);
+            _db.Employees.Remove(x);
+            await _db.SaveChangesAsync();
+            return x;
         }
 
-        public Task<Employee> GetEmployee(int employeeId)
+        public async Task<Employee> GetEmployee(int employeeId)
         {
-            var employee = _db.Employees.Find(employeeId) ??
-                           throw new EmployeeNullArgumentException($"Employee with Id: {employeeId} could not be found");
-            return Task.FromResult(employee);
+            var employee = await _db.Employees.Include(x => x.Credentials).SingleAsync(x => x.Id == employeeId) ??
+                           throw new EmployeeNotFoundException($"Employee with Id: {employeeId} could not be found");
+            return employee;
         }
 
-        public Task<Employee> UpdateEmployee(int employeeId, Employee employee)
+        // Returns Employee based on credentials Id
+        public async Task<Employee> GetEmployee(string email)
         {
-            _ = GetEmployee(employeeId);
+            var employee = await _db.Employees.Include(x => x.Credentials).Where(x => x.Credentials.Email == email).FirstAsync() ??
+                           throw new EmployeeNotFoundException($"Employee with credential's email: {email} could not be found");
+            return employee;
+        }
+
+        public async Task<Employee> UpdateEmployee(int employeeId, Employee employee)
+        {
             _ = employee ?? throw new EmployeeNullArgumentException();
-            employee.Id = employeeId;
-            _db.Employees.Update(employee);
-            _db.SaveChanges();
-            return Task.FromResult(employee);
+            var employeeEntity = await GetEmployee(employeeId);
+            employeeEntity.FullName = employee.FullName;
+            await _db.SaveChangesAsync();
+            return employeeEntity;
         }
     }
 }

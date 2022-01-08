@@ -14,3 +14,6 @@ D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.In
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\ref\CodeSavvy.Infrastructure.dll
 D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.pdb
+D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\bin\Debug\net5.0\CodeSavvy.Infrastructure.runtimeconfig.json
+D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\bin\Debug\net5.0\CodeSavvy.Infrastructure.runtimeconfig.dev.json
+D:\C# Projects\codeSavvy_\CodeSavvy\Infrastructure\obj\Debug\net5.0\CodeSavvy.Infrastructure.genruntimeconfig.cache

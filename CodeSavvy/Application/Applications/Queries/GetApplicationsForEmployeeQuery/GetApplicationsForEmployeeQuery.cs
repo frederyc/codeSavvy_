@@ -10,6 +10,6 @@ namespace CodeSavvy.Application.Applications.Queries.GetApplicationsForEmployeeQ
 {
     public class GetApplicationsForEmployeeQuery : IRequest<List<Domain.Models.Application>>
     {
-        public Employee Employee { get; set; }
+        public int EmployeeId { get; set; }
     }
 }

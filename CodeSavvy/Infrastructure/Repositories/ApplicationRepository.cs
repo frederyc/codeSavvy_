@@ -8,6 +8,7 @@ using CodeSavvy.Application.Exceptions.NullArgumentException;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
 using CodeSavvy.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {
@@ -16,56 +17,73 @@ namespace CodeSavvy.Infrastructure.Repositories
         private readonly DatabaseContext _db;
 
         public ApplicationRepository(DatabaseContext db)
-            => _db = db;
+        {
+            _db = db;
+        } 
 
-        public Task<Domain.Models.Application> CreateApplication(Domain.Models.Application application)
+        public async Task<Domain.Models.Application> CreateApplication(Domain.Models.Application application)
         {
             _ = application ?? throw new ApplicationNullArgumentException();
-            _db.Applications.Add(application);
-            _db.SaveChanges();
-            return Task.FromResult(application);
+            await _db.Applications.AddAsync(application);
+            await _db.SaveChangesAsync();
+            return application;
         }
 
-        public Task<Domain.Models.Application> DeleteApplication(int applicationId)
+        public async Task<Domain.Models.Application> DeleteApplication(int applicationId)
         {
-            var application = GetApplication(applicationId).Result;
+            var application = await GetApplication(applicationId);
             _db.Applications.Remove(application);
-            _db.SaveChanges();
-            return Task.FromResult(application);
+            await _db.SaveChangesAsync();
+            return application;
         }
 
-        public Task<Domain.Models.Application> GetApplication(int applicationId)
+        public async Task<Domain.Models.Application> GetApplication(int applicationId)
         {
-            var application = _db.Applications.Find(applicationId) ?? 
+            var application = await _db.Applications
+                                  .Include(x => x.Employee)
+                                  .Include(x => x.Job)
+                                  .Include(x => x.Job.Employer)
+                                  .SingleAsync(x => x.Id == applicationId) ?? 
                               throw new ApplicationNotFoundException($"Application with Id: {applicationId} could not be found");
-            return Task.FromResult(application);
+            return application;
         }
 
-        public Task<List<Domain.Models.Application>> GetApplicationsForEmployee(Employee employee)
+        public async Task<List<Domain.Models.Application>> GetApplicationsForEmployee(int employeeId)
         {
-            _ = employee ?? throw new EmployeeNullArgumentException();
-            return Task.FromResult(
-                _db.Applications.Where(a => a.Employee == employee).ToList()
-            );
+            //_ = employee ?? throw new EmployeeNullArgumentException();
+            return await _db.Applications.Where(a => a.Employee.Id == employeeId)
+                .Include(a => a.Employee)
+                .Include(x => x.Job)
+                .Include(x => x.Job.Employer)
+                .ToListAsync();
         }
 
-        public Task<Domain.Models.Application> UpdateApplication(int applicationId, Domain.Models.Application application)
+        public async Task<Domain.Models.Application> UpdateApplication(int applicationId, Domain.Models.Application application)
         {
-            _ = GetApplication(applicationId);
             _ = application ?? throw new ApplicationNullArgumentException();
-            application.Id = applicationId;
-            _db.Applications.Update(application);
-            _db.SaveChanges();
-            return Task.FromResult(application);
+            var applicationEntity = await GetApplication(applicationId);
+            applicationEntity.Employee = application.Employee;
+            applicationEntity.Job = application.Job;
+            applicationEntity.Resume = application.Resume;
+            await _db.SaveChangesAsync();
+            return application;
         }
 
-        public Task<List<Domain.Models.Application>> GetApplicationsForJob(Job job)
+        public async Task<List<Domain.Models.Application>> GetApplicationsForJob(int jobId)
         {
-            _ = job ?? throw new JobNullArgumentException();
-            return Task.FromResult(
-                _db.Applications.Where(a => a.Job == job).ToList()
-            );
+            //_ = job ?? throw new JobNullArgumentException();
+            return await _db.Applications.Where(a => a.Job.Id == jobId)
+                .Include(a => a.Employee)
+                .Include(a => a.Job)
+                .ToListAsync();
         }
+
+        /*_ = credentials ?? throw new CredentialsNullArgumentException();            // Check if credentials argument is null
+            var credentialsEntity = await GetCredentials(credentialsId);                // Get credentials entity from db
+            credentialsEntity.Email = credentials.Email;                                // Set email and password of entity with user input
+            credentialsEntity.Password = credentials.Password;          
+            await _db.SaveChangesAsync();                                   
+            return credentials;*/
 
     }
 }

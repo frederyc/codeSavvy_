@@ -8,6 +8,7 @@ using CodeSavvy.Application.Exceptions.NullArgumentException;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Domain.Models;
 using CodeSavvy.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeSavvy.Infrastructure.Repositories
 {
@@ -18,38 +19,44 @@ namespace CodeSavvy.Infrastructure.Repositories
         public CredentialsRepository(DatabaseContext db)
             => _db = db;
 
-        public Task<Credentials> CreateCredentials(Credentials credentials)
+        public async Task<Credentials> CreateCredentials(Credentials credentials)
         {
             _ = credentials ?? throw new CredentialsNullArgumentException();
-            _db.Credentials.Add(credentials);
-            _db.SaveChanges();
-            return Task.FromResult(credentials);
+            await _db.Credentials.AddAsync(credentials);
+            await _db.SaveChangesAsync();
+            return credentials;
         }
 
-        public Task<Credentials> DeleteCredentials(int credentialsId)
+        public async Task<Credentials> DeleteCredentials(int credentialsId)
         {
-            var credentials = GetCredentials(credentialsId).Result;
+            var credentials = await GetCredentials(credentialsId);
             _db.Credentials.Remove(credentials);
-            _db.SaveChanges();
-            return Task.FromResult(credentials);
+            await _db.SaveChangesAsync();
+            return credentials;
         }
 
-        public Task<Credentials> GetCredentials(int credentialsId)
+        public async Task<Credentials> GetCredentials(int credentialsId)
         {
-            var credentials = _db.Credentials.Find(credentialsId) ??
+            var credentials = await _db.Credentials
+                                  .FindAsync(credentialsId) ??
                               throw new CredentialsNotFoundException($"Credentials with Id: {credentialsId} could not be found");
-
-            return Task.FromResult(credentials);
+            return credentials;
         }
 
-        public Task<Credentials> UpdateCredentials(int credentialsId, Credentials credentials)
+        public async Task<Credentials> GetCredentials(string email)
         {
-            _ = GetCredentials(credentialsId);              // Check if credentials exist, before updating it 
-            _ = credentials ?? throw new CredentialsNullArgumentException();
-            credentials.Id = credentialsId;
-            _db.Credentials.Update(credentials);
-            _db.SaveChanges();
-            return Task.FromResult(credentials);
+            var credentials = await _db.Credentials.Where(c => c.Email == email).FirstAsync();
+            return credentials;
+        }
+
+        public async Task<Credentials> UpdateCredentials(int credentialsId, Credentials credentials)
+        {
+            _ = credentials ?? throw new CredentialsNullArgumentException();            // Check if credentials argument is null
+            var credentialsEntity = await GetCredentials(credentialsId);                // Get credentials entity from db
+            credentialsEntity.Email = credentials.Email;                                // Set email and password of entity with user input
+            credentialsEntity.Password = credentials.Password;          
+            await _db.SaveChangesAsync();                                   
+            return credentials;
         }
     }
 }

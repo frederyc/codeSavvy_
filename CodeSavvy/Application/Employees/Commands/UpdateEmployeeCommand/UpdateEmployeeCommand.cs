@@ -11,6 +11,6 @@ namespace CodeSavvy.Application.Employees.Commands.UpdateEmployeeCommand
     public class UpdateEmployeeCommand : IRequest<Employee>
     {
         public int Id { get; set; }
-        public Employee Employee { get; set; }
+        public string FullName { get; set; }
     }
 }

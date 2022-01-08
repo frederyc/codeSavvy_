@@ -4,6 +4,7 @@ using CodeSavvy.Application.Applications.Queries.GetApplicationByIdQuery;
 using CodeSavvy.Domain.Interfaces;
 using CodeSavvy.Infrastructure.DataAccess;
 using CodeSavvy.Infrastructure.Repositories;
+using CodeSavvy.WebUI.Middleware;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,11 +28,11 @@ namespace CodeSavvy.WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // services.AddMediatR(Assembly.GetExecutingAssembly());
-
             services.AddMediatR(typeof(GetApplicationByIdQuery).GetTypeInfo().Assembly);
 
             services.AddMediatR(typeof(Startup));
+
+            services.AddCors();
 
             services.AddDbContext<DatabaseContext>(options =>
             {
@@ -49,6 +50,8 @@ namespace CodeSavvy.WebUI
             {
                 settings.Title = "CodeSavvy";
             });
+
+            services.AddAutoMapper(typeof(Startup));
 
             AddRepositories(services);
         }
@@ -68,6 +71,10 @@ namespace CodeSavvy.WebUI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000"));
+
+            // app.UseGlobalExceptionHandler();
 
             app.UseHttpsRedirection();
 
